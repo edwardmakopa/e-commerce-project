@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+*{
+    margin: 0;
+}
+h4{
+    color: rgb(229, 234, 216);
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: inline;
+    border-radius: 4px;
+    padding: 2px;
+    
+}
+.navigation-bar{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    width: 100vw;
+    
+}
+.navigation{
+    background-color: rgb(46, 119, 57);
+    width: 30%;
+    height: 35px;
+    flex-grow: 1;
+}
+.left{
+    flex: 1;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    min-width: 250px;
+    background-color: rgb(46, 119, 57);
+    padding-left: 20px;
+}
+
+.middle{
+  flex-direction: row;
+  background-color: rgb(46, 119, 57);
+  justify-content: center;
+  width: 500px;
+}
+.search-box{
+  position: relative;
+  margin-top: 16px;
+  flex-grow: 1;
+  width: 100%;
+}
+.search-box input{
+  width: 100%;
+  border: 1 gray solid;
+  background-color: white;
+  font-size: larger;
+  border-radius: 3px;
+  min-width: 150px;
+  color: black;
+  padding-right: 2px;
+  padding-left: 5px;
+}
+#search-icon{
+  position: absolute;
+  right: 1px;
+  padding-right: 1px;
+  font-size: 1rem;
+  font-size: large;
+  margin-top: 1px;
+  background-color: antiquewhite;
+  padding: 1px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding-left: 2px;
+  cursor: pointer;
+}
+.right{
+    display: flex;
+    flex: 1;
+    background-color: rgb(46, 119, 57);
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+}
+.notificationIcon{
+    padding-left: 12px;
+    cursor: pointer;
+}
+.right a{
+    font-size: 1.1rem;
+    padding-left: 15px;
+    cursor: pointer;
+    padding-right: 12px;
+}
+
+.categories{
+  background-color: rgb(177, 173, 173);
+}
+.categories span{
+  margin-left: 20px;
+}

@@ -1,0 +1,25 @@
+.categoriesHome{
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+.categoriesHome h1{
+    
+}
+.category-home{
+    background-color: rgb(235, 237, 240);
+    border-radius: 8px;
+    margin-top: 80px;
+}
+.first{
+     
+    padding: 4px;
+}
+#head{
+    font-size: 2rem;
+    text-align: center;
+}

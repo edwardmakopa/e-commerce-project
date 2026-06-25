@@ -75,3 +75,10 @@
     font-size: 1.5rem;
     color: rgb(146, 146, 26);
 }
+select{
+    width: 30px;
+    background-color: azure;
+}
+select option{
+    font-weight: bold;
+}

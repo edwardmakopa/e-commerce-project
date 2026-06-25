@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import "../styles/products.css"
-export default function Product({ name, image, price,rate }: { name: string; image: StaticImageData; price: number; rate:number }) {
+export default function Product({ name, image, price,rate }: { name: string; image: string; price: number; rate:number }) {
     function rating(x:number){
         console.log()
         switch(x){
@@ -21,12 +21,19 @@ export default function Product({ name, image, price,rate }: { name: string; ima
     return (
         <div className="product">
              <div className="product-image">
-                <Image src={image} alt={name} className="image"/>
+                <Image src={image} alt={name} className="image" width={500} height={500}/>
              </div>
              <div className="product-details">
                 <p className="product-name">{name}</p>
                 <p className="rating">{rating(rate)}</p>
                 <p className="price">${price.toFixed(2)}</p>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
                 <button className="add-to-cart">Add to Cart</button>
             </div>
         </div>

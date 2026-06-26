@@ -1,11 +1,8 @@
 import Product from "../product/product";
-import Phone from "../../images/phone.png"
-import Ram from "../../images/ram.png"
-import shirt from "../../images/shirt.png"
 import "../styles/products.css"
 import {products} from "../../data/products"
 
-let dt={...products};
+const dt={...products};
 export default function LatestProducts(){
     const products:Array<number>=[1,3,4,5,7,8,9,0,11,20]
     return(

@@ -22,13 +22,14 @@ function CartIcon({ size = 24, color = "currentColor" }) {
       <circle cx="9" cy="20" r="1.4" fill={color} stroke="none"/>
       <circle cx="17" cy="20" r="1.4" fill={color} stroke="none"/>
     </svg>
+    <div className="cart-count">0</div>
     </div>
   );
 }
 function RightNav(){
   return (
     <div className="right">
-      <a>sign in</a><span>|</span>
+      <a className="sign">sign in</a><span>|</span>
       <a className="orders ">orders</a><span>|</span>
       <div className="notificationIcon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
@@ -37,7 +38,6 @@ function RightNav(){
       </div>
       <span>|</span>
       <CartIcon/>
-      
     </div>   )
 }
 function MiddleNav(){

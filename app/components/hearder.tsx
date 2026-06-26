@@ -14,6 +14,17 @@ function LeftNav(){
       <menu className="left"><h4><Link href="/">nrc-market</Link></h4></menu>
   )
 }
+function CartIcon({ size = 24, color = "currentColor" }) {
+  return (
+    <div className="Carticon">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 8H6" />
+      <circle cx="9" cy="20" r="1.4" fill={color} stroke="none"/>
+      <circle cx="17" cy="20" r="1.4" fill={color} stroke="none"/>
+    </svg>
+    </div>
+  );
+}
 function RightNav(){
   return (
     <div className="right">
@@ -24,6 +35,9 @@ function RightNav(){
           <path d="M12 24c1.326 0 2.402-1.077 2.402-2.402h-4.804c0 1.325 1.076 2.402 2.402 2.402zm6.364-6v-5c0-3.072-1.639-5.64-4.5-6.32V6a1.864 1.864 0 10-3.728 0v.68C7.275 7.36 5.636 9.928 5.636 13v5l-1.636 1.636V21h16v-1.364L18.364 18z"/>
         </svg>
       </div>
+      <span>|</span>
+      <CartIcon/>
+      
     </div>   )
 }
 function MiddleNav(){

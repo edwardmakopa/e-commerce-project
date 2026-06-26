@@ -16,6 +16,9 @@ export default function LatestProducts(){
                 {
                     products.map((x)=><Product name={`product ${x}`} key={x} image="/images/shirt.png" price={100*x} rate={x%5}/>)
                 }
+                {
+                    dt.map((x)=><Product name={x.name} key={x.id} image={x.imageUrl} price={x.cost} rate={x.rating}/>)
+                }
             </div>
         </div>
     )

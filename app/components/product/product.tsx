@@ -27,6 +27,8 @@ export default function Product({ name, image, price,rate }: { name: string; ima
                 <p className="product-name">{name}</p>
                 <p className="rating">{rating(rate)}</p>
                 <p className="price">${price.toFixed(2)}</p>
+
+                {/* option to choose quantity */}
                 <select>
                     <option>1</option>
                     <option>2</option>

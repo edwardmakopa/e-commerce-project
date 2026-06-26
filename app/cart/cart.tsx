@@ -1,9 +1,33 @@
 import React from 'react'
 
-function cart() {
+function Cart() {
   return (
-    <div>cart</div>
+    <div className='cart-container'>
+      //the header
+      <h1>your Cart</h1>
+
+      //cart items will be displayed here
+      <CartItems/>
+
+      //the summary part
+      <CartSummary/>
+    </div>
+  )
+}
+function CartItems(){
+  return(
+    <div className='cart-items'>
+    </div>
   )
 }
 
-export default cart
+function CartSummary(){
+  return(
+    <div className='cart-summary'>
+        <h3>Cart Summary</h3>
+        <p>Total Items: 0</p>
+        <p>Total Price: $0.00</p>
+      </div>
+  )
+}
+export default Cart;

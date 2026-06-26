@@ -23,7 +23,7 @@ export default function Container({title}:{title:string}){
                    <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
                    <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
                    {
-                    products.map((x)=><Product name={x.name} key={x.id} image={`/images/${x.imageUrl}`} price={x.cost} rate={rate()}/>)
+                    products.map((x)=><Product name={x.name} key={x.id} image={`/images/${x.imageUrl}`} price={x.cost} rate={x.rating}/>)
                    }
             </div>
         </div>

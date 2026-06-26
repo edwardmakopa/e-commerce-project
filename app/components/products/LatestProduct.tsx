@@ -1,8 +1,8 @@
 import Product from "../product/product";
 import "../styles/products.css"
-import {products} from "../../data/products"
+import {products,getAllProducts} from "../../data/products"
 
-const dt={...products};
+const dt=getAllProducts();
 export default function LatestProducts(){
     const products:Array<number>=[1,3,4,5,7,8,9,0,11,20]
     return(
@@ -15,6 +15,9 @@ export default function LatestProducts(){
                 <Product name="Product 4" image="/images/phone.png" price={499.99} rate={4}/>
                 {
                     products.map((x)=><Product name={`product ${x}`} key={x} image="/images/shirt.png" price={100*x} rate={x%5}/>)
+                }
+                {
+                    dt.map((x)=><Product name={x.name} key={x.id} image={`/images/${x.imageUrl}`} price={x.cost} rate={x.rating}/>)
                 }
             </div>
         </div>

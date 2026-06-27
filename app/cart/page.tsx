@@ -12,7 +12,6 @@ function Cart() {
         <CartButton/>
         <CartSummary/>
         
-        
       </div>
     </div>
   )
@@ -48,9 +47,19 @@ function CartItem({name, price, quantity,image}:{name:string, price:number, quan
       </div>
       <div className='cart-item-details'>
         <h3>{name}</h3>
-        <p>Price: ${price.toFixed(2)}</p>
         <p>Quantity: {quantity}</p>
+        <p>Price: ${price.toFixed(2)}</p>
+      </div>
+      <div className="adjust-quantity">
+        <div className='quantity'>
+          <button className="decrement">-</button>
+          <span>{quantity}</span>
+          <button className="increment">+</button>
+        </div>
         <Removebutton/>
+      </div>
+      <div className='cart-item-total'>
+        <p>Total: ${(price*quantity).toFixed(2)}</p>
       </div>
     </div>
   )

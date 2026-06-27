@@ -8,8 +8,8 @@ export default function Home(){
             <div className="categoriesHome">
                 <h1 id="head">OUR COLLECTION</h1>
                 <Container title="electronics"/>
-                <Container title="electronics"/>
-                <Container title="electronics"/>
+                <Container title="food"/>
+                <Container title="clothes"/>
             </div>
         </div>
     )

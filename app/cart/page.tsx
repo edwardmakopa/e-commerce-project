@@ -1,7 +1,10 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import "../components/styles/cart.css"
 import Link from 'next/link'
+import { useState } from 'react'
+
 function Cart() {
   return (
     <div className='cart'>
@@ -17,10 +20,20 @@ function Cart() {
   )
 }
 function CartItems(){
+    const [collection, setCollection] = useState([
+    { id: 1, name: "Product 1", price: 100, quantity: 1, image: "/images/shirt.png" },
+    { id: 2, name: "Product 2", price: 200, quantity: 2, image: "/images/shirt.png" }
+  ]);
   const items=[1,2,3,4,5]
+
+  //remove item from cart
+  function removeItemFromCart(itemId:number){
+    const updatedCollection = collection.filter(item => item.id !== itemId);
+    setCollection(updatedCollection);
+  }
   return(
     <div className='cart-items'>
-      {items.map((x)=><CartItem name={`Product ${x}`} key={x} image={`/images/shirt.png`} price={100*x} quantity={x}/>)
+      {collection.map((item)=><CartItem itemId={item.id} name={item.name} key={item.id} image={item.image} price={item.price} quantity={item.quantity} onRemove={removeItemFromCart}/>)
       }
     </div>
   )
@@ -39,11 +52,11 @@ function CartSummary(){
   )
 }
 
-function CartItem({name, price, quantity,image}:{name:string, price:number, quantity:number, image:string}){
+function CartItem({itemId, name, price, quantity, image, onRemove}:{itemId: number, name: string, price: number, quantity: number, image: string, onRemove: (itemId: number) => void}){
   return (
     <div className='cart-item'>
       <div className='cart-item-image-container'>
-      < Image src={image} alt={name} className='cart-item-image' width={500} height={500}/>
+      <Image src={image} alt={name} className='cart-item-image' width={500} height={500}/>
       </div>
       <div className='cart-item-details'>
         <h3>{name}</h3>
@@ -56,7 +69,7 @@ function CartItem({name, price, quantity,image}:{name:string, price:number, quan
           <span>{quantity}</span>
           <button className="increment">+</button>
         </div>
-        <Removebutton/>
+        <Removebutton onRemove={onRemove} itemId={itemId}/>
       </div>
       <div className='cart-item-total'>
         <p>Total: ${(price*quantity).toFixed(2)}</p>
@@ -64,13 +77,17 @@ function CartItem({name, price, quantity,image}:{name:string, price:number, quan
     </div>
   )
 }
-function Removebutton(){
+
+//all about remove button
+function Removebutton({ onRemove, itemId }: { onRemove: (itemId: number) => void; itemId: number }){
   return(
     <div className='Removebutton'>
-      <button>remove</button>
+      <button onClick={() => onRemove(itemId)}>remove</button>
     </div>
   )
 }
+
+
 function CartButton(){
   return(
     <div className='Cartbutton'>

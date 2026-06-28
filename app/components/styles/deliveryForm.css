@@ -1,0 +1,153 @@
+.delivery-form-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #faf6ee;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.delivery-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: #fffdf9;
+  border: 1px solid #e3dccf;
+  border-radius: 12px;
+  padding: 36px 32px;
+  box-shadow: 0 2px 16px rgba(31, 77, 54, 0.06);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1f4d36;
+  background-color: #e7f0e9;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.form-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 28px;
+  line-height: 1.25;
+  color: #20221f;
+  margin: 0 0 28px 0;
+}
+
+.form-field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3a3a36;
+  margin-bottom: 6px;
+}
+
+.form-field input {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 11px 12px;
+  border: 1.5px solid #d8d2c4;
+  border-radius: 8px;
+  background-color: #fffefb;
+  color: #20221f;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-field input:focus {
+  border-color: #1f4d36;
+}
+
+.form-field input.invalid {
+  border-color: #b3261e;
+}
+
+.field-error {
+  font-size: 12.5px;
+  color: #b3261e;
+  margin: 6px 0 0 0;
+}
+
+.field-hint {
+  font-size: 12.5px;
+  color: #8c8a80;
+  margin: 6px 0 0 0;
+}
+
+.password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrap input {
+  flex: 1;
+  padding-right: 60px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1f4d36;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fffefb;
+  background-color: #1f4d36;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.submit-button:hover {
+  background-color: #2f6b4f;
+}
+
+.delivery-success {
+  text-align: center;
+}
+
+.success-leaf {
+  color: #1f4d36;
+  margin-bottom: 12px;
+}
+
+.delivery-success h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 24px;
+  margin: 0 0 8px 0;
+}
+
+.delivery-success p {
+  font-size: 14.5px;
+  color: #5a5a54;
+}
+
+@media (max-width: 480px) {
+  .delivery-card {
+    padding: 28px 22px;
+  }
+  .form-heading {
+    font-size: 24px;
+  }
+}

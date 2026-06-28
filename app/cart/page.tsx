@@ -100,7 +100,9 @@ function CartButton(){
 function CartCheckoutButton(){
     return(
       <div className='CartCheckoutButton'>
+        <a href='../purchaseform'>
         <button>purchase</button>
+        </a>
       </div>
     )
 }

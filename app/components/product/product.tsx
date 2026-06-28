@@ -1,6 +1,11 @@
+"use client";
 import Image, { StaticImageData } from "next/image";
+import {useCart} from "../../context/cartContext"
 import "../styles/products.css"
-export default function Product({ name, image, price,rate }: { name: string; image: string; price: number; rate:number }) {
+export default function Product({ name, image, price,rate ,id}: { name: string; image: string; price: number; rate:number; id:number }) {
+    const {addToCart}=useCart()
+    const data={id:id,name:name,image:image,price:price,quantity:1}
+
     function rating(x:number){
         console.log()
         switch(x){
@@ -36,7 +41,12 @@ export default function Product({ name, image, price,rate }: { name: string; ima
                     <option>4</option>
                     <option>5</option>
                 </select>
-                <button className="add-to-cart">Add to Cart</button>
+                <button className="add-to-cart" onClick={()=>{
+                    console.log(data);
+                    addToCart(data)
+                    console.log("data added")
+
+                }}>Add to Cart</button>
             </div>
         </div>
     );

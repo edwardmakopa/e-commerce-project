@@ -27,8 +27,11 @@
 .cart-item-image-container{
     width: 150px;
     height: 150px;
-    object-fit: cover;
+    object-fit:scale-down;
     border-radius: 10px;
+}
+.cart-item-image{
+    height: 100%;
 }
 
 /*cart item details*/

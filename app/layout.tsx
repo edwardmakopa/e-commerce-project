@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Hearder from "./components/hearder";
 import Navigation from "./components/nav";
+import Providers from "./providers"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +14,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 
 export const metadata: Metadata = {
   title: "EB",
@@ -30,11 +32,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="Top">
+        <Providers>
+            <div className="Top">
                   <Hearder/>
                   <Navigation/>
               </div>
         {children}
+        </Providers>
         </body>
     </html>
   );

@@ -24,6 +24,7 @@ export default function LatestProducts(){
                 {
                     data.map((x)=><Product name={x.name} key={x.id} image={`/images/${x.imageUrl}`} price={x.cost} rate={x.rating} id={x.id}/>)
                 }
+                
             </div>
         </div>
     )

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import "../components/styles/cart.css"
 import Link from 'next/link'
 import { useState } from 'react'
+import { useCart } from '../context/cartContext'
 
 function Cart() {
   return (
@@ -20,20 +21,19 @@ function Cart() {
   )
 }
 function CartItems(){
-    const [collection, setCollection] = useState([
-    { id: 1, name: "Product 1", price: 100, quantity: 1, image: "/images/shirt.png" },
-    { id: 2, name: "Product 2", price: 200, quantity: 2, image: "/images/shirt.png" }
-  ]);
-  const items=[1,2,3,4,5]
+    const {cart,removeFromCart}:{cart: any[], removeFromCart: (productId: number) => void}=useCart();
+  // selected items in state
+    const [collection, setCollection]=useState(cart);
+  //const items=[1,2,3,4,5]
 
   //remove item from cart
   function removeItemFromCart(itemId:number){
-    const updatedCollection = collection.filter(item => item.id !== itemId);
-    setCollection(updatedCollection);
+    removeFromCart(itemId);
   }
   return(
     <div className='cart-items'>
-      {collection.map((item)=><CartItem itemId={item.id} name={item.name} key={item.id} image={item.image} price={item.price} quantity={item.quantity} onRemove={removeItemFromCart}/>)
+      {
+      cart.map((item)=><CartItem itemId={item.id} name={item.name} key={item.id+item.name} image={item.image} price={item.price} quantity={item.quantity} onRemove={removeItemFromCart}/>)
       }
     </div>
   )
@@ -86,8 +86,6 @@ function Removebutton({ onRemove, itemId }: { onRemove: (itemId: number) => void
     </div>
   )
 }
-
-
 function CartButton(){
   return(
     <div className='Cartbutton'>

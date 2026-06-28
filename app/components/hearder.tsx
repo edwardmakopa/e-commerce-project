@@ -1,7 +1,10 @@
 "use client"
 import "./styles/header.css"
 import Link from "next/link"
+import { useRouter } from "next/router"
+
 export default function Hearder(){
+
   return(
     <nav className="navigation-bar">
       <LeftNav key="a"/>
@@ -16,15 +19,18 @@ function LeftNav(){
   )
 }
 function CartIcon({ size = 24, color = "currentColor" }) {
+
   return (
-    <div className="Carticon" onClick={() => { window.location.href = "/cart"; }}>
-          <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 8H6" />
-            <circle cx="9" cy="20" r="1.4" fill={color} stroke="none"/>
-            <circle cx="17" cy="20" r="1.4" fill={color} stroke="none"/>
-          </svg>
-    <div className="cart-count">0</div>
+    <Link href={"/cart"} className="cart-link">
+      <div className="Carticon">
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 8H6" />
+              <circle cx="9" cy="20" r="1.4" fill={color} stroke="none"/>
+              <circle cx="17" cy="20" r="1.4" fill={color} stroke="none"/>
+            </svg>
+      <div className="cart-count">0</div>
     </div>
+    </Link>
   );
 }
 function RightNav(){

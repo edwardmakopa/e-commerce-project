@@ -14,16 +14,16 @@ export default function Container({title}:{title:string}){
         <div className="category-container">
             <h1>{title}</h1>
             <div className="products">
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
-                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={1}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={2}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={3}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={4}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={5}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={6}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={7}/>
+                   <Product name="Product 1" image="/images/phone.png" price={199.99} rate={rate()} id={8}/>
                    {
-                    products.map((x)=><Product name={x.name} key={x.id} image={`/images/${x.imageUrl}`} price={x.cost} rate={x.rating}/>)
+                    products.map((x)=><Product name={x.name} key={x.id} image={`/images/${x.imageUrl}`} price={x.cost} rate={x.rating} id={x.id}/>)
                    }
             </div>
         </div>
